@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import placeholder from "../assets/placeholder.jpeg";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const rooms = [
   {
@@ -35,8 +37,11 @@ const rooms = [
 ];
 
 function FeaturedRooms() {
-  const handleBookClick = () => {
-    alert("This would redirect to the booking page in the full application");
+  const navigate = useNavigate(); // Initialize useNavigate hook
+
+  const handleBookClick = (room) => {
+    // Redirect to the BookNow component with room data
+    navigate("/book-now", { state: { room } });
   };
 
   return (
@@ -83,7 +88,7 @@ function FeaturedRooms() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                onClick={handleBookClick}
+                onClick={() => handleBookClick(room)} // Pass room data to handleBookClick
                 className="w-full bg-gradient-to-r from-neon-blue to-neon-purple text-white py-3 rounded font-orbitron hover:bg-primary-accent transition"
               >
                 Book Now

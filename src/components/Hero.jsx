@@ -1,9 +1,13 @@
 import { motion } from "framer-motion";
 import placeholder from "../assets/placeholder.jpeg";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 function Hero() {
+  const navigate = useNavigate(); // Initialize useNavigate
+
   const handleCtaClick = () => {
-    alert("This would redirect to the booking page in the full application");
+    // Redirect to the BookNow component
+    navigate("/book-now");
   };
 
   return (

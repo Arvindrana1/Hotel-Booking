@@ -5,6 +5,7 @@ import FeaturedRooms from "./components/FeaturedRooms";
 import Services from "./components/Services";
 import Footer from "./components/Footer";
 import Rooms from "./components/Rooms";
+import BookNow from "./components/BookNow";
 
 function Home() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/rooms" element={<Rooms />} />
+          <Route path="/book-now" element={<BookNow />} />
         </Routes>
         <Footer />
       </div>
